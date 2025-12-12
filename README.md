@@ -36,7 +36,7 @@ argocd repo add https://github.com/Mahesh3602/argocd-setup.git --username Mahesh
 # Create an Argo CD application named my-argocd-test
      argocd app create my-argocd-test \
        --repo https://github.com/Mahesh3602/argocd-setup.git \
-       --path manifests \
+       --path . \
        --dest-namespace default \
        --dest-server https://kubernetes.default.svc \
        --sync-policy=manual
