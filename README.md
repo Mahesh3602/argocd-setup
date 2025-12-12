@@ -43,3 +43,11 @@ argocd repo add https://github.com/Mahesh3602/argocd-setup.git --username Mahesh
        --dest-namespace default \
        --dest-server https://kubernetes.default.svc \
        --sync-policy=manual
+
+
+######################################
+
+# Expose service as Loadbalancer to access UI
+  - kubectl edit svc argocd-server -n argocd
+  - kubectl get svc argocd-server -n argocd
+  - argocd admin initial-password -n argocd  -- (to get password)
