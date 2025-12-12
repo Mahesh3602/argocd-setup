@@ -28,7 +28,10 @@ working kubenetes cluster
 - Login to Argo CD, with the admin password
     argocd login localhost:8085 --username admin --password JL-z5OoQUdN2TDXN --insecure
 
-# create deployment, service and yaml files
+# create deployment, service and yaml files and commit to git
+
+# create PAT in git and allow content acces
+  export GH_TOKEN=<GH-TOKEN>
 
 # Add the repository to Argo CD
 argocd repo add https://github.com/Mahesh3602/argocd-setup.git --username Mahesh3602 --password $GH_TOKEN
