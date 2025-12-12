@@ -9,7 +9,7 @@ working kubenetes cluster
   - Check resource created in argocd ns (usually 7)
     kubectl get pods -n argocd
   - Expose the Argo CD API server through Argo CD UI in the background
-    kubectl port-forward svc/argocd-server -n argocd 8080:443 & 
+    kubectl port-forward svc/argocd-server -n argocd 8085:443 & 
     - The & at the end of the command runs the command in the background.keep it open.
   - Verify
     wget --no-check-certificate https://localhost:8080
@@ -24,6 +24,6 @@ working kubenetes cluster
 
 - Get the initial admin password.
     argocd admin initial-password -n argocd
-    Czr2r5EZ8Siz7xIy
+    JL-z5OoQUdN2TDXN
 - Login to Argo CD, with the admin password
-    argocd login localhost:8080 --username admin --password Czr2r5EZ8Siz7xIy --insecure
+    argocd login localhost:8085 --username admin --password JL-z5OoQUdN2TDXN --insecure

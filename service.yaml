@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: apiVersion: v1
+kind: Service
+metadata:
+  name: my-argo-cd-test
+  namespace: my-argo-cd-test
+spec:
+  selector:
+    app: my-argocd-test
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
