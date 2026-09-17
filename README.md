@@ -18,6 +18,10 @@ working kubenetes cluster
     ```bash
     kubectl port-forward svc/argocd-server -n argocd 8085:443 &
     ```
+    or
+    ```bash
+    kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+    ```
     - The & at the end of the command runs the command in the background.keep it open.
   - Verify
     wget --no-check-certificate https://localhost:8080
