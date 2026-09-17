@@ -24,15 +24,19 @@ working kubenetes cluster
 
 # Install and configure the Argo CD CLI
 - Download the CLI.
+    ```bash
     curl -sSL -o argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
     chmod +x argocd
     sudo mv argocd /usr/local/bin
-
+    ```
     OR brew install argocd
 
 - Get the initial admin password.
+
+    ```bash
     argocd admin initial-password -n argocd
     JL-z5OoQUdN2TDXN
+    ```
 - Login to Argo CD, with the admin password
     argocd login localhost:8085 --username admin --password JL-z5OoQUdN2TDXN --insecure
 
