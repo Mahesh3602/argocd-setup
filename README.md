@@ -3,13 +3,21 @@ working kubenetes cluster
 
 # Objective 2: Set up a Core GitOps Environment with Argo CD
   - create namespace
+    ```bash
     kubectl create ns argocd
+    ```
   - Apply the Argo CD installation manifest
+    ```bash
     kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+    ```
   - Check resource created in argocd ns (usually 7)
+    ```bash
     kubectl get pods -n argocd
+    ```
   - Expose the Argo CD API server through Argo CD UI in the background
-    kubectl port-forward svc/argocd-server -n argocd 8085:443 & 
+    ```bash
+    kubectl port-forward svc/argocd-server -n argocd 8085:443 &
+    ```
     - The & at the end of the command runs the command in the background.keep it open.
   - Verify
     wget --no-check-certificate https://localhost:8080
