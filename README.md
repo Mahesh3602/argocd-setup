@@ -41,6 +41,10 @@ working kubenetes cluster
     argocd admin initial-password -n argocd
     JL-z5OoQUdN2TDXN
     ```
+    ```bash
+    kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
+    ```
+    
 - Login to Argo CD, with the admin password
     argocd login localhost:8085 --username admin --password JL-z5OoQUdN2TDXN --insecure
 
